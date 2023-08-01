@@ -12,5 +12,3 @@ export const GET_POST_DATA = 'GET_POST_DATA'
 export const GET_ALL_PRODUCT = 'GET_ALL_PRODUCT'
 
 //? Like
-export const INCREMENT = "INCREMENT";
-export const DECROMENT = "DECROMENT";

@@ -18,9 +18,8 @@ const Header = () => {
     <div className={styles.root}>
       <Container maxWidth="lg">
         <div className={styles.inner}>
-          <Link to="/">
-            <div className={styles.logo}>Logo</div>
-          </Link>
+          
+         
           <div className={styles.buttons}>
             {user.fullName ? (
               <>

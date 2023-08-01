@@ -25,9 +25,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Register />
-      <Login />
-      <Home /> */}
       <Container maxWidth='lg'>
         <Routes>
           <Route path="/" element={user.fullName?<Home/>:<Register/>} />

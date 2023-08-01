@@ -5,17 +5,14 @@ export const createPost = async (req, res) => {
     try {
       const post = new PostModel({
         owner: req.body.owner,
-        title: req.body.title,
+        
         description: req.body.description,
-        price: req.body.price,
-        brand: req.body.brand,
-        category: req.body.category,
-        image: req.file ? `http://localhost:5500/${req.file.path}` : null,
+        
       });
       await post.save();
       res.status(201).json(post);
     } catch (err) {
-      // console.log(err);
+      
       res.status(500).json({
         message: "Не удалось создать Пост",
       });
@@ -75,12 +72,9 @@ export const updatePost = async (req, res) => {
   try {
     const post = await PostModel.findByIdAndUpdate(postId, {
       owner: req.body.owner,
-      title: req.body.title,
+      
       description: req.body.description,
-      price: req.body.price,
-      brand: req.body.brand,
-      category: req.body.category,
-      image: req.file ? `http://localhost:5500/${req.file.path}` : null,
+  
     })
 
     if (!post) {

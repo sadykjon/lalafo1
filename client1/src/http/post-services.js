@@ -2,11 +2,7 @@ import instance from "./settings";
 
 const createPost = (formData) => {
     console.log("postData>>>", formData);
-    return instance.post('post/add', formData, {
-        headers:{
-            'Content-Type' : "multipart/form-data"
-        }
-    })
+    return instance.post('post/add', formData)
 }
 
 const getPost = (userId) => {
@@ -27,11 +23,7 @@ const deletePost = (id) => {
 
 const updatePost = (id, formData) => {
     console.log("id, formData>>>", id, formData);
-    return instance.patch(`post/update/${id}`, formData, {
-        headers: {
-            "Content-Type" : "multipart/form-data"
-        }
-    })
+    return instance.patch(`post/update/${id}`, formData)
 }
 const getPostById = (id) => {
     return instance.get(`post/${id}`)

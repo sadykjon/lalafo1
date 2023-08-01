@@ -2,11 +2,7 @@ import instance from "./settings";
 
 const registerServices = (data) => {
     console.log("registerServices>>>",data);
-    return instance.post('users/register',data, {
-        headers:{
-          "Content-Type": "multipart/form-data"
-        }
-      })
+    return instance.post('users/register',data)
 }
 
 const loginServices = (data) => {

@@ -1,13 +1,13 @@
-import { INCREMENT, DECROMENT } from '../types'
+// import { INCREMENT, DECROMENT } from '../types'
 
-export const increment = () => {
-    return {
-      type: INCREMENT,
-    };
-  };
+// export const increment = () => {
+//     return {
+//       type: INCREMENT,
+//     };
+//   };
   
-  export const decroment = () => {
-    return {
-      type: DECROMENT,
-    };
-  };
+//   export const decroment = () => {
+//     return {
+//       type: DECROMENT,
+//     };
+//   };

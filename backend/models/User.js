@@ -15,7 +15,6 @@ const UserSchema = new Schema({
         type:String,
         required:true
     },
-    avatarUrl:String,
     posts: {
         type: Types.ObjectId,
         ref: 'Post'

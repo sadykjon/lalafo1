@@ -8,13 +8,13 @@ export const register=async (req, res) => {
   const password = req.body.password;
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
-  const image = req.file ? `http://localhost:5500/${req.file.path}` : null;
+
   try {
     const doc = new UserModel({
       fullName: req.body.fullName,
       email: req.body.email,
       password: hash,
-      avatarUrl: image,
+     
     });
     const user = await doc.save();
     const { ...userData } = user.toJSON();

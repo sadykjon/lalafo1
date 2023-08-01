@@ -10,17 +10,17 @@ const Home = () => {
 
   useEffect(() => {
     const getAll = async () => {
-      const data = await postServices.getPostAll(); // console.log("data>>>", data)
+      const data = await postServices.getPostAll(); 
       dispatch(getAllProduct(data.data));
     };
     getAll();
   }, []);
-  console.log(allProduct);
+  // console.log(allProduct);
   return (
     <div className="home-card">
-      {allProduct.map((elem, index) => {
-        return <HomeCard key={index} {...elem} />;
-      })}
+      
+        <HomeCard  />;
+      
     </div>
   );
 };

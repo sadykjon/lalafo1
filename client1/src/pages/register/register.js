@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import styles from "./register.module.css";
 import { useForm } from "react-hook-form";
@@ -20,17 +19,11 @@ const Register = () => {
       fullName: "",
       email: "",
       password: "",
-      avatarUrl: null,
     },
     mode: "onChange",
   });
   const onSubmit = async (values) => {
-    const formData = new FormData();
-    formData.append("fullName", values.fullName);
-    formData.append("email", values.email);
-    formData.append("password", values.password);
-    formData.append("avatarUrl", values.avatarUrl[0]);
-    const data = await authServices.registerServices(formData);
+    const data = await authServices.registerServices(values);
     navigate("/auth/sign-in")
     console.log("data>>>", data);
   };
@@ -43,9 +36,7 @@ const Register = () => {
       <Typography classes={{ root: styles.title }} variant="h5">
         Создание аккаунта
       </Typography>
-      <div className={styles.avatar}>
-        <Avatar src='' sx={{ width: 100, height: 100 }} />
-      </div>
+    
       <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
         <TextField
           className={styles.field}
@@ -77,13 +68,7 @@ const Register = () => {
           helperText={errors.password?.message}
           {...register("password", { required: "Укажите пароль" })}
         />
-        <TextField
-          className={styles.field}
-          type="file"
-          variant="standard"
-          fullWidth
-          {...register("avatarUrl")}
-        />
+      
         <Button
           disabled={!isValid}
           type="submit"
